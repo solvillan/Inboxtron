@@ -1,4 +1,4 @@
-//From https://github.com/fgnass/inbox-app/blob/master/web/unread.js
+// From https://github.com/fgnass/inbox-app/blob/master/web/unread.js
 /*
 This is free and unencumbered software released into the public domain.
 
