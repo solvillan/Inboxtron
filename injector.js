@@ -32,11 +32,8 @@ module.exports = function(win) {
     var wc = win.webContents;
     wc.insertCSS(fs.readFileSync(dir + '/inject/injected.css', 'utf8'));
     wc.executeJavaScript('module.paths.push("' + dir + path.sep + 'node_modules");');
-	wc.executeJavaScript(fs.readFileSync(dir + '/inject/unread.js', 'utf8').replace('$%pathImage%$', dir + path.sep));
+    console.log(fs.readFileSync(dir + '/inject/unread.js', 'utf8').replace('$%pathImage%$', (dir + path.sep).replace('\\', '/')));
+	wc.executeJavaScript(fs.readFileSync(dir + '/inject/unread.js', 'utf8').replace('$%pathImage%$', (dir + path.sep).replace('\\', '/')));
     wc.executeJavaScript('setTimeout(checkState, 1000)');
-
-
-    //wc.executeJavaScript('module.paths.push("' + dir + '/web");');
-    //wc.executeJavaScript('require("inject");');
   });
 };

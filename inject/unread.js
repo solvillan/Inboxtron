@@ -31,8 +31,6 @@ var ipc = electron.ipcRenderer;
 var click = require('./click');
 var seen;
 
-var imagePath = 'file://$%pathImage%$icon_256x256.png';
-
 function extractData(ss) {
   var id, avatar, sender, subject;
 
@@ -104,6 +102,7 @@ function checkState() {
 
   getNew(messages).forEach(function(msg) {
     if (!firstTime) {
+        var imagePath = 'file://$%pathImage%$icon_256x256.png';
       // Don't show notifications upon startup
       new Notification(msg.sender, {
         tag: msg.id,
@@ -120,5 +119,14 @@ function checkState() {
 
   setTimeout(checkState, 1000);
 }
+
+new Notification("Test", {
+  tag: "asd",
+  body: 'The Text!',
+  icon: 'file://$%pathImage%$icon_256x256.png'
+})
+.addEventListener('click', function(ev) {
+  ipc.send('show-window');
+});
 
 checkState();
