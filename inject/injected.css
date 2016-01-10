@@ -1,0 +1,106 @@
+/*From https://github.com/fgnass/inbox-app/blob/master/web/unread.js*/
+/*
+This is free and unencumbered software released into the public domain.
+
+Anyone is free to copy, modify, publish, use, compile, sell, or
+distribute this software, either in source code form or as a compiled
+binary, for any purpose, commercial or non-commercial, and by any
+means.
+
+In jurisdictions that recognize copyright laws, the author or authors
+of this software dedicate any and all copyright interest in the
+software to the public domain. We make this dedication for the benefit
+of the public at large and to the detriment of our heirs and
+successors. We intend this dedication to be an overt act of
+relinquishment in perpetuity of all present and future rights to this
+software under copyright law.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+For more information, please refer to <http://unlicense.org/>
+*/
+
+input, textarea, keygen, select, option, button {
+  font-family: sans-serif;
+     -webkit-app-region: no-drag;
+}
+
+/* don't scroll the body so that the fixed header doesn't move on overscroll */
+body {
+  overflow-y: hidden !important;
+}
+#Nr {
+  overflow-y: auto;
+  background: #f2f2f2;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: rgba(255,255,255,0.33);
+}
+
+/* dark sidebar
+ **************/
+
+body .lQ {
+  background: rgb(33,37,43);
+  color: #d2d2d2;
+}
+
+/* active item */
+body .hA,
+body .dK {
+  color: #fff;
+}
+
+/* round scrollbar thumb */
+body .lQ::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: rgba(255,255,255,0.33);
+}
+
+/* hide dividers */
+body .Y {
+  border-bottom: none;
+}
+
+/* lighten dark icons */
+.lQ img[src*=ic_custom-cluster],
+.lQ img[src*=ic_draft],
+.lQ img[src*=ic_sent],
+.lQ img[src*=ic_reminder],
+.lQ img[src*=ic_trash],
+.lQ img[src*=ic_spam],
+.lQ img[src*=ic_contacts],
+.lQ img[src*=ic_gmail],
+.lQ img[src*=ic_low_priority],
+.lQ img[src*=ic_add_cluster],
+.lQ img[src*=ic_settings],
+.lQ img[src*=ic_help] {
+  -webkit-filter: invert() brightness(0.5);
+}
+
+/* title bar
+ ************/
+
+/* make room for window controls */
+/*.f1 {
+  margin-right: 96px;
+}*/
+
+/* hide google apps and notifications */
+#gbwa,
+#gbwa + div {
+  display: none;
+}
+
+/* shrink the icon container */
+div[style='min-width: 120px;'] {
+  min-width: inherit !important;
+}
