@@ -120,13 +120,4 @@ function checkState() {
   setTimeout(checkState, 1000);
 }
 
-new Notification("Test", {
-  tag: "asd",
-  body: 'The Text!',
-  icon: 'file://$%pathImage%$icon_256x256.png'
-})
-.addEventListener('click', function(ev) {
-  ipc.send('show-window');
-});
-
 checkState();
